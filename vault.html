@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting to VaultApp</title>
+    <script>
+        // Read the full query string like ?userId=alok123&vaultId=abc987
+        const query = window.location.search;
+        // Build the deep link
+        const deepLink = "vaultapp://vault" + query;
+        // Redirect to your app
+        window.location.href = deepLink;
+    </script>
+</head>
+<body>
+    <p>Redirecting to VaultApp...</p>
+    <p>If not redirected, <a id="fallbackLink" href="#">click here</a>.</p>
+    <script>
+        // Also add fallback clickable link
+        document.getElementById("fallbackLink").href = "vaultapp://vault" + window.location.search;
+    </script>
+</body>
+</html>
